@@ -1,0 +1,14 @@
+---
+- name: yum
+  yum: name={{item}}  state=latest
+  with_items:
+    - ncurses-devel
+    - libX11-devel
+    - libXt-devel
+    - libgnome-devel
+    - gtk2-devel
+    - libgnomeui-devel
+    - libXpm-devel
+    - lua-devel
+    - mercurial
+    - python-devel

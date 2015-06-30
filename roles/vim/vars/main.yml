@@ -1,0 +1,5 @@
+---
+hg_repo: https://vim.googlecode.com/hg/
+compile_work_dir: /tmp/vim-compile
+# install_dir: /home/vikke/compile
+configure_option: --prefix={{install_dir}} --with-features=huge --enable-luainterp=yes --enable-mzschemeinterp=yes --enable-pythoninterp=yes --with-python-config-dir=/usr/lib64/python2.6/config --enable-rubyinterp=yes --enable-cscope --enable-multibyte --enable-xim --enable-gtk2-check --with-x

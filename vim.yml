@@ -1,0 +1,11 @@
+- hosts: all
+  gather_facts: False
+  sudo: yes
+  vars_prompt:
+    - name: install_dir
+      prompt: 'vim install prefix dir like /usr/local'
+      confirm: no
+      private: no
+  roles:
+    - yum
+    - vim
