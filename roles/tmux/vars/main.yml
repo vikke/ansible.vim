@@ -1,0 +1,8 @@
+libevent_file: libevent-2.0.22-stable.tar.gz
+libevent_compile_dir: /tmp/libevent-2.0.22-stable
+ncurses_file: ncurses.tar.gz
+ncurses_compiel_dir: /tmp/ncurses-5.9
+tmux_file: tmux-2.0.tar.gz
+tmux_compile_dir: /tmp/tmux-2.0
+
+

@@ -1,24 +1,19 @@
 ---
 - name: hg clone
   hg: repo="{{hg_repo}}" dest="{{compile_work_dir}}"
-  sudo: no
 
 - name: configure cache clear
   file: path={{compile_work_dir}}/src/auto/config.cache state=absent
-  sudo: no
 
 - name: make clean
   command: make clean chdir={{compile_work_dir}}
-  sudo: no
 
 - name: configure
   command: ./configure {{configure_option}} chdir="{{compile_work_dir}}"
-  sudo: no
 
 - name: compile
   command: make chdir={{compile_work_dir}}
-  sudo: no
 
 - name: install
+  sudo: yes
   command: make install chdir={{compile_work_dir}}
-  sudo: no

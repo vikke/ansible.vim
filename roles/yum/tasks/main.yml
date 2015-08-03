@@ -12,3 +12,4 @@
     - lua-devel
     - mercurial
     - python-devel
+    - ctags

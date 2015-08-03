@@ -1,0 +1,28 @@
+---
+- name:
+  sudo: no
+  file:
+    path: /home/user/matsunaga/config
+    state: absent
+
+- name:
+  sudo: no
+  git:
+    repo: git@github.com:vikke/config.git
+    dest: /home/user/matsunaga/config
+    accept_hostkey: yes
+
+- name:
+  sudo: no
+  file:
+    owner: matsunaga
+    group: livesen
+    recurse: yes
+    path: /home/user/matsunaga/config
+
+- name:
+  sudo: no
+  command: /home/user/matsunaga/config/make_env
+  args:
+    chdir: /home/user/matsunaga/config
+

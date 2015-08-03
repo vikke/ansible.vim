@@ -1,0 +1,43 @@
+- name: libevent unarchive
+  unarchive: src={{ libevent_file }} dest=/tmp/
+
+- name: libevent configure
+  command: ./configure --prefix=/usr/local chdir="{{libevent_compile_dir}}"
+
+- name: libevent compile
+  command: make chdir={{libevent_compile_dir}}
+
+- name: libevent install
+  sudo: yes
+  command: make install chdir={{libevent_compile_dir}}
+
+- name: ncurses unarchive
+  unarchive: src={{ ncurses_file }} dest=/tmp/
+
+- name: ncurses configure
+  command: ./configure --prefix=/usr/local chdir="{{ncurses_compiel_dir}}"
+
+- name: ncurses compile
+  command: make chdir={{ncurses_compiel_dir}}
+
+- name: ncurses install
+  sudo: yes
+  command: make install chdir={{ncurses_compiel_dir}}
+
+
+
+- name: tmux unarchive
+  unarchive: src={{ tmux_file }} dest=/tmp/
+
+- name: tmux configure
+  command: ./configure LDFLAGS='-L/usr/local/lib' CFLAGS='-I/usr/local/include' chdir="{{tmux_compile_dir}}"
+
+- name: tmux compile
+  command: make chdir={{tmux_compile_dir}}
+
+- name: tmux install
+  sudo: yes
+  command: make install chdir={{tmux_compile_dir}}
+
+
+
